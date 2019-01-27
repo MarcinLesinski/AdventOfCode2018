@@ -1,20 +1,28 @@
 package day1;
 
+import Riddles.OnLog;
+import Riddles.Riddle;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class Part1
+public class Part1 implements Riddle
 {
-    public void Part1()
+    private OnLog onLog;
+
+    public Part1()
     {
 
     }
 
-    public void execute()
+    @Override
+    public void slove()
     {
+
+        onLog.call("kopieć");
         int frequency = 0;
         Path dataPath = Paths.get("data.txt");
         List<String> lines = null;
@@ -40,4 +48,9 @@ public class Part1
 //        System.in.read();
     }
 
+    @Override
+    public void setOnLog(OnLog onlog)
+    {
+        this.onLog = onlog;
+    }
 }
