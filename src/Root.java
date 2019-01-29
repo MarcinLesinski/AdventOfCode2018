@@ -14,9 +14,9 @@ public class Root implements OnLog
         Riddles riddles = (new Builder()).registerRiddles();
         Scanner inputScanner = new Scanner(System.in);
         System.out.println("There are my Advent of Code 2018 solutions");
-        System.out.println("The riddle of which day you want slove?");
+        System.out.println("The riddle of which day you want solve?");
         int day = inputScanner.nextInt();
-        System.out.println("Which part of riddle you want to slove?");
+        System.out.println("Which part of riddle you want to solve?");
         int part = inputScanner.nextInt();
 
 
@@ -25,7 +25,7 @@ public class Root implements OnLog
         {
             riddle = riddles.get(day, part);
             riddle.setOnLog(this);
-            riddle.slove();
+            riddle.solve();
         }
         catch (Exception e)
         {

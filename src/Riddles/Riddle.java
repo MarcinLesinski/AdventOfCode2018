@@ -1,8 +1,10 @@
 package Riddles;
 
+import java.io.IOException;
+
 public interface Riddle
 {
-    void slove();
+    void solve() throws IOException;
     void setOnLog(OnLog onlog);
 
 }

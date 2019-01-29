@@ -2,55 +2,33 @@ package day1;
 
 import Riddles.OnLog;
 import Riddles.Riddle;
+import Riddles.RiddleBase;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class Part1 implements Riddle
+public class Part1 extends RiddleBase implements Riddle
 {
     private OnLog onLog;
 
-    public Part1()
+    public Part1(String dataFileName)
     {
-
+        super(dataFileName);
     }
 
     @Override
-    public void slove()
+    public void solve() throws IOException
     {
-
-        onLog.call("kopieć");
-        int frequency = 0;
-        Path dataPath = Paths.get("data.txt");
-        List<String> lines = null;
-        try
-        {
-            lines = Files.readAllLines(dataPath);
-        }
-        catch (IOException e)
-        {
-            System.out.println("Can not read file: " + dataPath.toString());
-//                System.in.read();
-
-            return;
-        }
-
-        for (String line : lines)
-        {
+        AtomicInteger frequency = new AtomicInteger();
+        data().forEachRemaining(line -> {
             int delta = Integer.parseInt(line);
-            frequency += delta;
+            frequency.addAndGet(delta);
+        } );
+        onLog.call("The answer to the riddle is:" + frequency);
+    }
+        @Override
+        public void setOnLog (OnLog onlog)
+        {
+            this.onLog = onlog;
         }
-
-        System.out.println("Final frequency: " + frequency);
-//        System.in.read();
     }
-
-    @Override
-    public void setOnLog(OnLog onlog)
-    {
-        this.onLog = onlog;
-    }
-}
