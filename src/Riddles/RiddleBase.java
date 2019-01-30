@@ -5,8 +5,9 @@ import java.util.ListIterator;
 
 public abstract class RiddleBase implements Riddle
 {
-    protected OnLog onLog;
     private List<String> data;
+    protected OnLog onLog;
+    protected OnResult onResult;
 
     public RiddleBase(List<String> data)
     {
@@ -22,6 +23,13 @@ public abstract class RiddleBase implements Riddle
     public void setOnLog(OnLog onlog)
     {
         this.onLog = onlog;
+    }
+
+
+    @Override
+    public void setOnResult(OnResult onResult)
+    {
+        this.onResult = onResult;
     }
 
 }

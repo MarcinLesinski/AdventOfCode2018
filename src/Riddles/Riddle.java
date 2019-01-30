@@ -6,5 +6,6 @@ public interface Riddle
 {
     void solve() throws IOException;
     void setOnLog(OnLog onlog);
+    void setOnResult(OnResult onResult);
 
 }

@@ -23,7 +23,7 @@ public class Part1 extends RiddleBase implements Riddle
             int delta = Integer.parseInt(line);
             frequency.addAndGet(delta);
         });
-        onLog.call("The answer to the riddle is:" + frequency);
+        onResult.onResult(frequency.toString());
     }
 
 }

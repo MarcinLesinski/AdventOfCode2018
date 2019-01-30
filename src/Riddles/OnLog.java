@@ -2,5 +2,5 @@ package Riddles;
 
 public interface OnLog
 {
-    void call(String text);
+    void onLog(String text);
 }

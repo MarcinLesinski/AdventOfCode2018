@@ -2,7 +2,7 @@ import Riddles.*;
 
 import java.util.Scanner;
 
-public class Root implements OnLog
+public class Root implements OnLog, OnResult
 {
     public Root()
     {
@@ -25,6 +25,7 @@ public class Root implements OnLog
         {
             riddle = riddles.get(day, part);
             riddle.setOnLog(this);
+            riddle.setOnResult(this);
             riddle.solve();
         }
         catch (Exception e)
@@ -34,10 +35,16 @@ public class Root implements OnLog
     }
 
     @Override
-    public void call(String text)
+    public void onLog(String text)
     {
         String lines[] = text.split("\\r?\\n");
         for (String line : lines)
             System.out.println(line);
+    }
+
+    @Override
+    public void onResult(String result)
+    {
+        System.out.println("Result of the riddle is: " + result);
     }
 }
