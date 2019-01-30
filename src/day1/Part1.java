@@ -5,15 +5,16 @@ import Riddles.Riddle;
 import Riddles.RiddleBase;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Part1 extends RiddleBase implements Riddle
 {
     private OnLog onLog;
 
-    public Part1(String dataFileName)
+    public Part1(List<String> data)
     {
-        super(dataFileName);
+        super(data);
     }
 
     @Override
