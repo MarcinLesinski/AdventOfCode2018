@@ -5,7 +5,7 @@ import java.util.ListIterator;
 
 public abstract class RiddleBase implements Riddle
 {
-    private List<String> data;
+    protected List<String> data;
     protected OnLog onLog;
     protected OnResult onResult;
 
@@ -14,7 +14,7 @@ public abstract class RiddleBase implements Riddle
         this.data = data;
     }
 
-    protected ListIterator<String> data()
+    protected ListIterator<String> dataIterator()
     {
         return data.listIterator();
     }
@@ -24,7 +24,6 @@ public abstract class RiddleBase implements Riddle
     {
         this.onLog = onlog;
     }
-
 
     @Override
     public void setOnResult(OnResult onResult)
