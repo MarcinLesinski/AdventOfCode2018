@@ -18,7 +18,7 @@ public class Part1 extends RiddleBase implements Riddle
     public void solve()
     {
         AtomicInteger frequency = new AtomicInteger();
-        data().forEachRemaining(line ->
+        dataIterator().forEachRemaining(line ->
         {
             int delta = Integer.parseInt(line);
             frequency.addAndGet(delta);
