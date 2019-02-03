@@ -18,11 +18,11 @@ public class Part1Test
     private List<String> input;
     private String expected;
 
-    public Part1Test(List<String> input, String expetced)
+    public Part1Test(List<String> input, String excepted)
     {
 
         this.input = input;
-        this.expected = expetced;
+        this.expected = excepted;
     }
 
 
