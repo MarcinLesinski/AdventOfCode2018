@@ -1,27 +1,21 @@
 package day1;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import riddlesTestUtils.RiddleTestBase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 @RunWith(Parameterized.class)
-public class Part2Test
+public class Part2Test extends RiddleTestBase
 {
-    private Part2 riddle;
-    private List<String> input;
-    private String expected;
-
     public Part2Test(List<String> input, String expetced)
     {
-        this.input = input;
-        this.expected = expetced;
+        super(input, expetced);
     }
 
     @Parameterized.Parameters
@@ -35,18 +29,10 @@ public class Part2Test
         });
     }
 
-
     @Test
     public void solve()
     {
-        riddle = new Part2(input);
-        riddle.setOnLog(text ->
-        {
-        });
-        AtomicReference<String> actual = new AtomicReference<>();
-        riddle.setOnResult(actual::set);
-        riddle.solve();
-
-        Assert.assertEquals(this.expected, actual.toString());
+        this.riddle = new Part2(this.input);
+        this.executeTest();
     }
 }

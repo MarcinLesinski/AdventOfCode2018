@@ -1,3 +1,5 @@
+package riddlesTestUtils;
+
 import Riddles.Riddle;
 import org.junit.Assert;
 
@@ -7,9 +9,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class RiddleTestBase
 {
-
     protected Riddle riddle;
-    private List<String> input;
+    protected List<String> input;
     private String expected;
 
     public RiddleTestBase(List<String> input, String expetced)
@@ -18,15 +19,22 @@ public class RiddleTestBase
         this.expected = expetced;
     }
 
-    public void executeTest() throws IOException
+    public void executeTest()
     {
         riddle.setOnLog(text ->
         {
         });
         AtomicReference<String> actual = new AtomicReference<>();
         riddle.setOnResult(actual::set);
-        riddle.solve();
 
-        Assert.assertEquals(this.expected, actual.toString());
+        try
+        {
+            riddle.solve();
+            Assert.assertEquals(this.expected, actual.toString());
+        }
+        catch (IOException e)
+        {
+            Assert.fail();
+        }
     }
 }
