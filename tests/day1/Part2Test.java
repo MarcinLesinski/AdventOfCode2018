@@ -13,9 +13,9 @@ import java.util.List;
 @RunWith(Parameterized.class)
 public class Part2Test extends RiddleTestBase
 {
-    public Part2Test(List<String> input, String expetced)
+    public Part2Test(List<String> input, String expected)
     {
-        super(input, expetced);
+        super(input, expected);
     }
 
     @Parameterized.Parameters
