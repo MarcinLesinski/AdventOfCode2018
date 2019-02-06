@@ -9,9 +9,9 @@ import java.util.Set;
 
 public class Part2 extends RiddleBase implements Riddle
 {
-    public Part2(List<String> data)
+    public Part2(List<String> rawData)
     {
-        super(data);
+        super(rawData);
     }
 
     //TODO: It may take long time, use thread
@@ -23,9 +23,9 @@ public class Part2 extends RiddleBase implements Riddle
         occured.add(frequency);
         while (true)
         {
-            for (int i = 0; i < data.size(); i++)
+            for (int i = 0; i < rawData.size(); i++)
             {
-                frequency += Integer.parseInt(data.get(i));
+                frequency += Integer.parseInt(rawData.get(i));
                 if (occured.contains(frequency))
                 {
                     onResult.onResult(frequency.toString());

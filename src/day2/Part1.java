@@ -8,9 +8,9 @@ import java.util.List;
 public class Part1 extends RiddleBase implements Riddle
 {
 
-    public Part1(List<String> data)
+    public Part1(List<String> rawData)
     {
-        super(data);
+        super(rawData);
     }
 
     @Override
@@ -19,7 +19,7 @@ public class Part1 extends RiddleBase implements Riddle
         int doubleCount = 0;
         int tripleCount = 0;
 
-        for (String line : data)
+        for (String line : rawData)
         {
             boolean doubleDetected = false;
             boolean tripleDetected = false;

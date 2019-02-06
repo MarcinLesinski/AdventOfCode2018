@@ -7,17 +7,17 @@ import java.util.List;
 
 public class Part2 extends RiddleBase implements Riddle
 {
-    public Part2(List<String> data)
+    public Part2(List<String> rawData)
     {
-        super(data);
+        super(rawData);
     }
 
     @Override
     public void solve()
     {
-        for (String line1 : data)
+        for (String line1 : rawData)
         {
-            for (String line2 : data)
+            for (String line2 : rawData)
             {
                 if ( line1.equals(line2))
                     break;

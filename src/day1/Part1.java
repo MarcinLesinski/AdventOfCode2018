@@ -9,9 +9,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Part1 extends RiddleBase implements Riddle
 {
 
-    public Part1(List<String> data)
+    public Part1(List<String> rawData)
     {
-        super(data);
+        super(rawData);
     }
 
     @Override

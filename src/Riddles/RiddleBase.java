@@ -5,18 +5,18 @@ import java.util.ListIterator;
 
 public abstract class RiddleBase implements Riddle
 {
-    protected List<String> data;
+    protected List<String> rawData;
     protected OnLog onLog;
     protected OnResult onResult;
 
-    public RiddleBase(List<String> data)
+    public RiddleBase(List<String> rawData)
     {
-        this.data = data;
+        this.rawData = rawData;
     }
 
     protected ListIterator<String> dataIterator()
     {
-        return data.listIterator();
+        return rawData.listIterator();
     }
 
     @Override
