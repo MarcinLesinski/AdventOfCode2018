@@ -1,6 +1,6 @@
-package day3;
+package day3.Claims;
 
-class Claim
+public class Claim
 {
     public Integer left = 0;
     public Integer top = 0;
