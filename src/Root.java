@@ -28,8 +28,9 @@ public class Root implements OnLog, OnResult
             riddle.setOnResult(this);
             riddle.solve();
         }
-        catch (Exception e)
+        catch (RiddleBuildException e)
         {
+            System.out.println("Riddle execution failed. " + e.reason);
             e.printStackTrace();
         }
     }

@@ -20,13 +20,29 @@ public class Riddles
         riddles.put(id, buildData);
     }
 
-    public Riddle get(int day, int part) throws IOException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException
+    public Riddle get(int day, int part) throws RiddleBuildException
     {
         RiddleId id = new RiddleId(day, part);
         RiddleBuildData buildData = riddles.get(id);
-        List<String> data = Files.readAllLines(buildData.dataFile);
+        List<String> data = null;
+        try
+        {
+            data = Files.readAllLines(buildData.dataFile);
+        }
+        catch (NullPointerException | IOException e)
+        {
+            throw new RiddleBuildException("Data file access problem.");
+        }
 
-        RiddleBase riddle = buildData.classOfRiddle.getConstructor(List.class).newInstance(data);
+        RiddleBase riddle = null;
+        try
+        {
+            riddle = buildData.classOfRiddle.getConstructor(List.class).newInstance(data);
+        }
+        catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e)
+        {
+            throw new RiddleBuildException("Riddle class creation problem.");
+        }
         return riddle;
     }
 }

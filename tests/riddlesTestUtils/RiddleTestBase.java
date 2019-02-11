@@ -3,7 +3,6 @@ package riddlesTestUtils;
 import Riddles.Riddle;
 import org.junit.Assert;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -27,14 +26,7 @@ public class RiddleTestBase
         AtomicReference<String> actual = new AtomicReference<>();
         riddle.setOnResult(actual::set);
 
-        try
-        {
-            riddle.solve();
-            Assert.assertEquals(this.expected, actual.toString());
-        }
-        catch (IOException e)
-        {
-            Assert.fail();
-        }
+        riddle.solve();
+        Assert.assertEquals(this.expected, actual.toString());
     }
 }
