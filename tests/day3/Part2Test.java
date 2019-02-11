@@ -28,7 +28,7 @@ public class Part2Test extends RiddleTestBase
     @Test
     public void solve()
     {
-        this.riddle = new Part1(this.input);
+        this.riddle = new Part2(this.input);
         this.executeTest();
     }
 }
