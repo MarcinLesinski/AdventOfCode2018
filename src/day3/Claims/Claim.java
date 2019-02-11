@@ -2,6 +2,7 @@ package day3.Claims;
 
 public class Claim
 {
+    public Integer id = 0;
     public Integer left = 0;
     public Integer top = 0;
     public Integer width = 0;
