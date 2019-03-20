@@ -1,4 +1,4 @@
-package day4.Journal;
+package day4.SleepSchedule;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
-public class Journal
+public class SleepSchedule
 {
     private Map<Integer, List<Integer>>sleepTimeByGuard = new HashMap<>();
     private Map<Integer, List<Integer>> sleepingGuardsByMinute = new HashMap<>();
